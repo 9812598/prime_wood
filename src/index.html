@@ -10,7 +10,7 @@
       <div
         class="max-w-2xl w-3/5 bg-slate-50 shadow-xl py-4 px-8 flex flex-col justify-between h-5/6"
       >
-        <div class="flex flex-col">
+        <div class="hidden sadsad">
           <div class="flex justify-between">
             <div class="">
               STOCK <br />
@@ -54,57 +54,65 @@
 
         <button
           class="w-36 bg-red-600 text-white px-4 py-2 self-center mt-5 font-semibold"
+          onclick="showModal()"
         >
           New item
         </button>
       </div>
     </div>
     <div
-      class="fixed left-0 top-0 bg-black bg-opacity-50 w-screen h-screen flex justify-center items-center"
+      class="opacity-0 hidden transition-opacity duration-500 absolute w-screen h-screen"
     >
       <div
-        class="bg-white rounded shadow-lg w-4/12 flex flex-col py-2 h-4/6 justify-between"
+        class="fixed left-0 top-0 bg-black bg-opacity-50 w-screen h-screen"
+        id="modal"
       >
-        <div class="flex justify-between px-4 py-2">
-          <h2 class="font-semibold">New item</h2>
-          <div class="">cross</div>
-        </div>
+        <div class="flex justify-center items-center w-screen h-screen">
+          <div
+            class="bg-white rounded shadow-lg w-4/12 flex flex-col py-2 h-4/6 justify-between"
+          >
+            <div class="flex justify-between px-4 py-2">
+              <h2 class="font-semibold">New item</h2>
+              <div class="">cross</div>
+            </div>
 
-        <div
-          class="flex flex-col gap-4 border-t-2 border-b-2 border-slate-200 py-4"
-        >
-          <label for="title" class="px-4 py-2">Title</label>
-          <input
-            type="text"
-            name="title"
-            class="border border-slate-200 rounded-md px-4 py-2 mx-4"
-          />
-          <label for="price" class="px-4 py-2">Price</label>
-          <input
-            type="text"
-            name="price"
-            id=""
-            class="border border-slate-200 rounded-md px-4 py-2 mx-4"
-          />
-          <label for="date" class="px-4 py-2">Date and time</label>
-          <input
-            type="text"
-            name="date"
-            class="border border-slate-200 rounded-md px-4 py-2 mx-4"
-          />
-        </div>
+            <div
+              class="flex flex-col gap-4 border-t-2 border-b-2 border-slate-200 py-4"
+            >
+              <label for="title" class="px-4 py-2">Title</label>
+              <input
+                type="text"
+                name="title"
+                class="border border-slate-200 rounded-md px-4 py-2 mx-4"
+              />
+              <label for="price" class="px-4 py-2">Price</label>
+              <input
+                type="text"
+                name="price"
+                id=""
+                class="border border-slate-200 rounded-md px-4 py-2 mx-4"
+              />
+              <label for="date" class="px-4 py-2">Date and time</label>
+              <input
+                type="text"
+                name="date"
+                class="border border-slate-200 rounded-md px-4 py-2 mx-4"
+              />
+            </div>
 
-        <div class="flex justify-end">
-          <input
-            type="button"
-            value="Close"
-            class="border border-slate-200 rounded-md px-4 py-2 mx-4 bg-gray-600 text-white"
-          />
-          <input
-            type="submit"
-            value="Add"
-            class="border border-slate-200 rounded-md px-4 py-2 mx-4 text-white bg-red-500"
-          />
+            <div class="flex justify-end">
+              <input
+                type="button"
+                value="Close"
+                class="border border-slate-200 rounded-md px-4 py-2 mx-4 bg-gray-600 text-white"
+              />
+              <input
+                type="submit"
+                value="Add"
+                class="border border-slate-200 rounded-md px-4 py-2 mx-4 text-white bg-red-500"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
