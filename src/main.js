@@ -64,10 +64,34 @@ const validate = () => {
     testInput(regexPrice, price) &&
     testInput(regexDate, date)
   ) {
+    const tbody = document.getElementById("tbody");
+    tbody.innerHTML = "";
+
     itemRow.id = listOfItems.length + 1;
     listOfItems.push(itemRow);
     console.log(listOfItems);
     clearData();
     hideModal();
+    DrowItems();
   }
+};
+
+const DrowItems = () => {
+  listOfItems.sort((a, b) => {
+    return new Date(a.date) - new Date(b.date);
+  });
+
+  const tbody = document.getElementById("tbody");
+
+  listOfItems.forEach((item) => {
+    const tr = document.createElement("tr");
+    tr.classList.add("border-t-2", "border-slate-200");
+
+    for (key in item) {
+      const td = document.createElement("td");
+      td.append(item[key]);
+      tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  });
 };
