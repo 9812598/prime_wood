@@ -6,6 +6,8 @@
   }, 20);
 };
 
+const listOfItems = [];
+
 const hideModal = () => {
   let modal = document.getElementById("modal");
   modal.classList.add("opacity-0");
@@ -30,6 +32,8 @@ const clearData = () => {
 };
 
 const validate = () => {
+  const itemRow = {};
+
   let title = document.getElementById("title");
   let price = document.getElementById("price");
   let date = document.getElementById("date");
@@ -50,10 +54,20 @@ const validate = () => {
       element.classList.remove("border-red-500");
       element.classList.add("border-slate-200");
       nextElement.classList.add("invisible");
+      itemRow[element.id] = element.value;
+      return true;
     }
   };
 
-  testInput(regexTitle, title);
-  testInput(regexPrice, price);
-  testInput(regexDate, date);
+  if (
+    testInput(regexTitle, title) &&
+    testInput(regexPrice, price) &&
+    testInput(regexDate, date)
+  ) {
+    itemRow.id = listOfItems.length + 1;
+    listOfItems.push(itemRow);
+    console.log(listOfItems);
+    clearData();
+    hideModal();
+  }
 };
