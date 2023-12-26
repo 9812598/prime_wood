@@ -57,9 +57,6 @@ body {
   padding: 20px;
 }
 
-.header {
-}
-
 .header__inner {
   display: flex;
   justify-content: space-between;
@@ -71,7 +68,6 @@ body {
 }
 
 .table {
-  table-layout: fixed;
   border-collapse: separate;
   text-align: left;
 }
@@ -79,6 +75,22 @@ body {
 .table__inner {
   margin-top: 2rem;
   justify-self: start;
+}
+
+.table__thead th:nth-child(1) {
+  width: 11%;
+}
+
+.table__thead th:nth-child(2) {
+  width: 33%;
+}
+
+.table__thead th:nth-child(2) {
+  width: 22%;
+}
+
+.table__thead th:nth-child(2) {
+  width: 33%;
 }
 
 .table__row {
@@ -207,4 +219,8 @@ body {
 
 .modal__add {
   background-color: red;
+}
+
+.table__item-id {
+  font-weight: bold;
 }

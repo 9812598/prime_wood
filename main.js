@@ -85,6 +85,7 @@ const DrowItems = () => {
     tr.classList.add("table__row");
 
     const tdId = document.createElement("td");
+    tdId.classList.add("table__item-id");
     tdId.append(item["id"]);
     tr.appendChild(tdId);
 
