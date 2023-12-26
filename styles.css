@@ -37,6 +37,10 @@ body {
   align-items: center;
   margin: 0 auto;
   height: 100%;
+  @media (max-width: 520px) {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .stock__page {
@@ -130,6 +134,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 520px) {
+    width: 90%;
+  }
 }
 
 .modal__header {

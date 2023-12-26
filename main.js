@@ -1,6 +1,4 @@
-﻿console.log("js workong");
-
-const showModal = () => {
+﻿const showModal = () => {
   let modal = document.getElementById("modal");
   modal.classList.remove("modal--hidden");
 };
@@ -99,7 +97,13 @@ const DrowItems = () => {
     tr.appendChild(tdPrice);
 
     const tdDate = document.createElement("td");
-    tdDate.append(item["date"]);
+    const dates = item["date"].split(" ");
+
+    const br = document.createElement("br");
+
+    tdDate.append(dates[0]);
+    tdDate.appendChild(br);
+    tdDate.append(dates[1]);
     tr.appendChild(tdDate);
     tbody.appendChild(tr);
   });
