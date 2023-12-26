@@ -68,7 +68,7 @@ body {
 }
 
 .table {
-  border-collapse: separate;
+  border-collapse: collapse;
   text-align: left;
 }
 
