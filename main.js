@@ -33,8 +33,8 @@ const validate = () => {
   let price = document.getElementById("price");
   let date = document.getElementById("date");
 
-  const regexTitle = /^[а-яА-ЯёЁa-zA-Z0-9]+$/;
-  const regexPrice = /^[1-9]+$/;
+  const regexTitle = /(.|\s)*\S(.|\s)*/;
+  const regexPrice = /^[0-9]+$/;
   const regexDate =
     /^([0-2][0-9]|3[0-1]).(0[1-9]|1[0-2]).[1-2][0-9][0-9][0-9] ([0-1][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9]$/;
 
