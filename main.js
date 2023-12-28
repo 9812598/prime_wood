@@ -31,10 +31,12 @@ const validate = () => {
 
   let title = document.getElementById("title");
   let price = document.getElementById("price");
+  console.log(price);
+
   let date = document.getElementById("date");
 
   const regexTitle = /(.|\s)*\S(.|\s)*/;
-  const regexPrice = /^[0-9]+$/;
+  const regexPrice = /^[+]?\d+([.|,]\d+)?$/;
   const regexDate =
     /^([0-2][0-9]|3[0-1]).(0[1-9]|1[0-2]).[1-2][0-9][0-9][0-9] ([0-1][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9]$/;
 
@@ -47,7 +49,15 @@ const validate = () => {
     } else {
       element.classList.remove("modal__input--invalid");
       nextElement.classList.remove("modal__invalid-desc--invalid");
-      itemRow[element.id] = element.value;
+      if (element.name == "price") {
+        const replacedPrice = element.value
+          .replace(/^[+]/, "")
+          .replace(/^(\d+[\.|\,]\d*?[1-9])0+$/g, "$1")
+          .replace(/^0+$/g, "0")
+          .replace(/^0+([1-9])/g, "$1")
+          .replace(/^0+(0[,.])/g, "$1");
+        itemRow[element.id] = replacedPrice;
+      } else itemRow[element.id] = element.value;
       return true;
     }
   };
